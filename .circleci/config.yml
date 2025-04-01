@@ -10,10 +10,7 @@ jobs:
       - checkout
       - run:
           command: |
-            pip install unittest-xml-reporting
-            python -m xmlrunner discover -s . -p 'test_classifyTriangles.py' -o test-results
-      - store_test_results:
-          path: test-results
+            python -m unittest test_classifyTriangles.py
 
 workflows:
   testing_triangles:
